@@ -55,12 +55,6 @@ After successful deployment, you can call the created application via HTTP:
 curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
 ```
 
-Which should result in the following response:
-
-```json
-{ "message": "Hello from root!" }
-```
-
 ### Local development
 
 1.- Update Files configuration
@@ -107,20 +101,30 @@ serverless offline start --reloadHandler
 Server ready: http://localhost:3000 
 ```
 
-## Rutas
+## Rutas  V1/
 
 | Método | Ruta              | Descripción                | Ejemplo de Solicitud                                   |
 |--------|-------------------|----------------------------|--------------------------------------------------------|
-| GET    | `/api/clients`    | All clients                | `curl -X GET http://localhost:3000/api/clients`        |
-| POST   | `/api/clients`    | Create new client          | `curl -X POST http://localhost:3000/api/clients -H "Content-Type: application/json" -d '{"firstname": "O..","lastname": "Fer..","dni": 32343456,"age": 29,"linkedin": "linkedin.com"}'` |
-| GET    | `/api/clients/:id`| Client by ID               | `curl -X GET http://localhost:3000/api/clients/1`      |
-| GET    | `/api/films/:id`  | Films by ID                | `curl -X GET http://localhost:3000/api/films/1`        |
-| GET    | `/api/people/:id` | people by ID               | `curl -X GET http://localhost:3000/api/people/1`       |
-| GET    | `/api/planets/:id`| planets by ID              | `curl -X GET http://localhost:3000/api/planets/1`      | 
-| GET    | `/api/species/:id`| species by ID              | `curl -X GET http://localhost:3000/api/species/1`      |
-| GET    |`/api/starships/:id`| starships by ID           | `curl -X GET http://localhost:3000/api/starships/3`    |
-| GET    |`/api/vehicles/:id`| vehicles by ID             | `curl -X GET http://localhost:3000/api/vehicles/4`     |
+| GET    | `/v1/clients`    | All clients                | `curl -X GET http://localhost:3000/v1/clients`        |
+| POST   | `/v1/clients`    | Create new client          | `curl -X POST http://localhost:3000/v1/clients -H "Content-Type: application/json" -d '{"firstname": "O..","lastname": "Fer..","dni": 32343456,"age": 29,"linkedin": "linkedin.com"}'` |
+| GET    | `/v1/clients/:id`| Client by ID               | `curl -X GET http://localhost:3000/v1/clients/1`      |
 
+## Rutas  swapi/
+
+| Método | Ruta              | Descripción                | Ejemplo de Solicitud                                   |
+|--------|-------------------|----------------------------|--------------------------------------------------------|
+| GET    | `/swapi/films/:id`  | Films by ID                | `curl -X GET http://localhost:3000/swapi/films/1`        |
+| GET    | `/swapi/films`      |  all films               | `curl -X GET http://localhost:3000/swapi/films`        |
+| GET    | `/swapi/people/:id` | people by ID               | `curl -X GET http://localhost:3000/swapi/people/1`       |
+| GET    | `/swapi/people`      |  all people               | `curl -X GET http://localhost:3000/swapi/people`        |
+| GET    | `/swapi/planets/:id`| planets by ID              | `curl -X GET http://localhost:3000/swapi/planets/1`      | 
+| GET    | `/swapi/planets`      |  all planets               | `curl -X GET http://localhost:3000/swapi/planets`        |
+| GET    | `/swapi/species/:id`| species by ID              | `curl -X GET http://localhost:3000/swapi/species/1`      |
+| GET    | `/swapi/species`      |  all species               | `curl -X GET http://localhost:3000/swapi/species`        |
+| GET    |`/swapi/starships/:id`| starships by ID           | `curl -X GET http://localhost:3000/swapi/starships/3`    |
+| GET    | `/swapi/starships`      |  all starships               | `curl -X GET http://localhost:3000/starships`        |
+| GET    |`/swapi/vehicles/:id`| vehicles by ID             | `curl -X GET http://localhost:3000/swapi/vehicles/4`     |
+| GET    | `/swapi/vehicles`      |  all vehicles               | `curl -X GET http://localhost:3000/vehicles`        |
 
 
 
@@ -128,9 +132,10 @@ Server ready: http://localhost:3000
 
 ```
 https://08pb3qbagd.execute-api.us-east-1.amazonaws.com/
+```
 
-docs api:
-
+### Doc
+```
 https://08pb3qbagd.execute-api.us-east-1.amazonaws.com/api-docs/sw-docs.html
 ```
 
