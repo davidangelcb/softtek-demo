@@ -1,6 +1,6 @@
 import express from 'express';
 import clientsService from '../services/clientsService.js';
-
+import { validateClient } from '../middlewares/clientValidator.js';
 
 const baseRouter = express.Router();
 
@@ -10,7 +10,7 @@ baseRouter.get('/', async (req, res) => {
     res.json(clients);
 });
 
-baseRouter.post('/', async (req, res) => {
+baseRouter.post('/', validateClient, async (req, res) => {
     const { firstname , lastname , dni , age , linkedin } = req.body;
     const newClient = await clientsService.createClient(firstname , lastname , dni , age , linkedin);
     res.status(201).json(newClient);
